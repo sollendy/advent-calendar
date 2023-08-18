@@ -55,7 +55,12 @@ modalButton.addEventListener("click", function() {
 function creaBox(i){
     const data = i + 1;
     const icona = source[i].icon;
-    const classi = "cont";
+    let classi = "cont";
+
+    //controllo se sono state aperte
+    if (finestreAperte.includes(i)) {
+        classi += " apri-cont";
+    }
 
     return `
     <div class="${classi}">
